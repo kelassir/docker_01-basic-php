@@ -7,7 +7,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     volumes:
-      - "./db/backup-sir:/backup"
+      - "./db/sirbackupsir:/backup"
     ports:
       - "33060:3306"
 
@@ -16,7 +16,7 @@ services:
     container_name: sir-basic-web1
     restart: always
     volumes:
-      - "./web/backup-sir:/backup"
+      - "./web/sirbackupsir:/backup"
       - "./web/html:/var/www/html/sir1"
     depends_on:
       - basic-db
